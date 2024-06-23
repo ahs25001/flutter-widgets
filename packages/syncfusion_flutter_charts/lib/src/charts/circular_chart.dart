@@ -64,6 +64,7 @@ class SfCircularChart extends StatefulWidget {
     this.borderWidth = 0.0,
     this.onLegendItemRender,
     this.onTooltipRender,
+    this.padding=EdgeInsets.all(8.0),
     this.onDataLabelRender,
     this.onDataLabelTapped,
     this.onLegendTapped,
@@ -96,6 +97,7 @@ class SfCircularChart extends StatefulWidget {
   /// }
   /// ```
   final ChartTitle title;
+  final EdgeInsetsGeometry padding ;
 
   /// Customizes the chart series.
   ///
@@ -888,7 +890,7 @@ class SfCircularChartState extends State<SfCircularChart>
           ),
         ),
         child: Padding(
-          padding: widget.margin.resolve(Directionality.maybeOf(context)),
+          padding: padding,
           child: current,
         ),
       ),
